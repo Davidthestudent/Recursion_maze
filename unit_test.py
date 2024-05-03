@@ -1,10 +1,3 @@
-"""
-Created on May 05, 2020
-Updated on April 10, 2022 by Florian Beck
-Updated on April 06, 2023 by Florian Beck
-
-@author: martin
-"""
 import unittest
 from datetime import date
 
@@ -21,42 +14,6 @@ class MazeSolveStruct:
         self.start_row = 0
         self.start_col = 0
         self.max_rec_depth = 0
-
-
-maxPoints = 10.0  # defines the maximum achievable points for the example tested here
-# two more points for the creation of own mazes (in my_maze.py)
-points = maxPoints  # stores the actually achieved points based on failed unit tests
-summary = ""
-
-
-def deduct_pts(value):
-    global points
-    points = points - value
-    if points < 0:
-        points = 0
-
-
-def resolve_amount_of_pts_to_deduct(argument):
-    pool = {
-        "test_one_exit": 0.5,
-        "test_two_exits": 0.5,
-        "test_min_maze_with_exit": 0.5,
-        "test_split_maze_with_two_exits": 0.5,
-        "test_split_maze_without_exit": 0.5,
-        "test_big_maze_one_exit": 0.5,
-        "test_min_maze_with_four_exits": 0.5,
-        "test_min_maze_without_exit": 0.5,
-        "test_max_rec_depth1": 0.5,
-        "test_max_rec_depth2": 1,
-        "test_max_rec_depth3": 1,
-        "test_diagonal_movement_with_exit": 0.5,
-        "test_maze_map_one_exit": 1,
-        "test_maze_map_multiple_exits": 1,
-        "test_maze_map_diagonal": 1,
-    }
-
-    # resolve the pts to deduct from pool
-    return pool.get(argument, 0)
 
 
 def create_maze(maze_type):
